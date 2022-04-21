@@ -23,15 +23,13 @@ class TransferData:
                 with open(local_path, 'rb') as f:
                     dbx.files_upload(f.read(), dropbox_path, mode=WriteMode('overwrite'))
 
-def main():
-    access_token = 'riFu6Ybhc9AAAAAAAAAAHWkfE9AiGyD6n4254tOxesw7ShRjGjFhrjhRVa3NX3mx'
-    transferData = TransferData(access_token)
-
-    file_from = str(input("Enter the folder path to transfer : -"))
-    file_to = input("enter the full path to upload to dropbox:- ")  # This is the full path to upload the file to, including name that you wish the file to be called once uploaded.
-
-    # API v2
-    transferData.upload_file(file_from,file_to)
+def main() :
+    accessToken="sl.BFQYgi31X8BCR__wE-2vj-F0Qt-zAkXvKuNMtEN-cB3KXA6krypgLyyvWyoBIU-fGXTBztr-n78aqUoS1AIK1YUpELrU27wjgYaH4mfIDJx2oKdD2fLetdhoiVRPqpUyDYAm_8aMCo68"          
+    transferData=TransferData(accessToken)
+    fileFrom = input("The location of source fle to be uploaded : ")
+    fileTo = input("The location on which it needs to be saved : ")
+    
+    transferData.upload(fileFrom, fileTo)
     print("file has been moved !!!")
 
 main()
